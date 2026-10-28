@@ -1,0 +1,150 @@
+{
+  "split": {
+    "train": 1367,
+    "val": 223,
+    "test": 679
+  },
+  "mmd2_vs_test": {
+    "real train beats (floor)": [
+      0.07324,
+      0.00567
+    ],
+    "DDPM (EMA)": [
+      0.08567,
+      0.00305
+    ],
+    "PCA-Gaussian": [
+      0.06139,
+      0.00156
+    ],
+    "template + noise": [
+      0.07653,
+      0.00307
+    ],
+    "record 208 (other patient)": [
+      0.55806,
+      0.00364
+    ],
+    "white Gaussian noise": [
+      0.46375,
+      0.0
+    ]
+  },
+  "discriminative": {
+    "DDPM (EMA)": [
+      0.978,
+      0.997
+    ],
+    "PCA-Gaussian": [
+      0.964,
+      0.995
+    ],
+    "template + noise": [
+      0.992,
+      1.0
+    ],
+    "oracle (real train beats)": [
+      0.496,
+      0.48
+    ]
+  },
+  "roughness_median_abs_2nd_diff": {
+    "real test": 0.007168459706008434,
+    "real train": 0.007168459706008434,
+    "DDPM": 0.003306314116343856,
+    "PCA-Gaussian": 0.003688743570819497,
+    "template + noise": 0.029440779238939285
+  },
+  "memorisation": {
+    "gen_nn_median": 0.22944021224975586,
+    "test_nn_median": 0.26879915595054626
+  },
+  "feature_w1_over_sd": {
+    "train W1/sd": {
+      "R amplitude (mV)": 1.271,
+      "post-R trough (mV)": 0.68,
+      "T-wave peak (mV)": 0.187,
+      "R width @50% (ms)": 0.187
+    },
+    "DDPM W1/sd": {
+      "R amplitude (mV)": 1.274,
+      "post-R trough (mV)": 0.648,
+      "T-wave peak (mV)": 0.42,
+      "R width @50% (ms)": 0.146
+    },
+    "PCA-Gaussian W1/sd": {
+      "R amplitude (mV)": 1.3,
+      "post-R trough (mV)": 0.957,
+      "T-wave peak (mV)": 0.378,
+      "R width @50% (ms)": 0.267
+    },
+    "template + noise W1/sd": {
+      "R amplitude (mV)": 0.771,
+      "post-R trough (mV)": 1.66,
+      "T-wave peak (mV)": 1.035,
+      "R width @50% (ms)": 0.393
+    }
+  },
+  "anomaly_auroc": {
+    "DDPM recon (t*=20)": [
+      0.764,
+      0.618,
+      0.886
+    ],
+    "DDPM recon (t*=40)": [
+      0.697,
+      0.572,
+      0.82
+    ],
+    "DDPM recon (t*=80)": [
+      0.648,
+      0.538,
+      0.754
+    ],
+    "PCA recon (k=5)": [
+      0.919,
+      0.843,
+      0.971
+    ],
+    "PCA recon (k=20)": [
+      0.961,
+      0.938,
+      0.978
+    ],
+    "distance to mean template": [
+      0.641,
+      0.513,
+      0.765
+    ],
+    "[context] RR prematurity": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "held_out_counts": {
+    "normal": 883,
+    "AV": 19
+  },
+  "final_loss": {
+    "train": 0.0063054770280844006,
+    "val": 0.010930958203971386
+  },
+  "config": {
+    "fs": 360,
+    "pre": 96,
+    "post": 160,
+    "T": 200,
+    "epochs": 120,
+    "batch": 64,
+    "lr": 0.001,
+    "ema_decay": 0.995,
+    "n_gen": 1200,
+    "ddpm_t_stars": [
+      20,
+      40,
+      80
+    ],
+    "k_draws": 3
+  }
+}
